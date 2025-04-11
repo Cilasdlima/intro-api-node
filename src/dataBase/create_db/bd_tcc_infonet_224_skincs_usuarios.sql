@@ -19,24 +19,24 @@
 -- Table structure for table `usuarios`
 --
 SELECT usu_id, usu_nome, usu_email, usu_senha, usu_steamid, usu_saldo, usu_pix, usu_cpf, usu_adm FROM usuarios;
-DROP TABLE IF EXISTS `usuarios`;
+DROP TABLE IF EXISTS 'usuarios';
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
-  `usu_id` int(11) NOT NULL AUTO_INCREMENT,
-  `usu_nome` varchar(100) NOT NULL,
-  `usu_email` varchar(100) NOT NULL,
-  `usu_senha` varchar(255) NOT NULL,
-  `usu_steamid` varchar(50) NOT NULL,
-  `usu_saldo` decimal(10,2) DEFAULT '0.00',
-  `usu_pix` varchar(100) DEFAULT NULL,
-  `usu_cpf` varchar(14) DEFAULT NULL,
-  `usu_adm` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`usu_id`),
-  UNIQUE KEY `usu_email` (`usu_email`),
-  UNIQUE KEY `usu_steamid` (`usu_steamid`),
-  UNIQUE KEY `usu_pix` (`usu_pix`),
-  UNIQUE KEY `usu_cpf` (`usu_cpf`)
+  'usu_id' int(11) NOT NULL AUTO_INCREMENT,
+  'usu_nome' varchar(100) NOT NULL,
+  'usu_email' varchar(100) NOT NULL,
+  'usu_senha' varchar(255) NOT NULL,
+  'usu_steamid' varchar(50) NOT NULL,
+  'usu_saldo' decimal(10,2) DEFAULT '0.00',
+  'usu_pix' varchar(100) DEFAULT NULL,
+  'usu_cpf' varchar(14) DEFAULT NULL,
+  'usu_adm' tinyint(1) DEFAULT '0',
+  PRIMARY KEY ('usu_id'),
+  UNIQUE KEY 'usu_email' ('usu_email'),
+  UNIQUE KEY 'usu_steamid' ('usu_steamid'),
+  UNIQUE KEY 'usu_pix' ('usu_pix'),
+  UNIQUE KEY 'usu_cpf' ('usu_cpf')
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -44,7 +44,7 @@ CREATE TABLE `usuarios` (
 -- Dumping data for table `usuarios`
 --
 
-LOCK TABLES `usuarios` WRITE;
+LOCK TABLES 'usuarios' WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;

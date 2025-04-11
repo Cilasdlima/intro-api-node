@@ -19,22 +19,22 @@
 -- Table structure for table `skins`
 --
 
-DROP TABLE IF EXISTS `skins`;
+DROP TABLE IF EXISTS 'skins';
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `skins` (
-  `skin_id` int(11) NOT NULL AUTO_INCREMENT,
-  `usu_id` int(11) NOT NULL,
-  `skin_nome` varchar(100) NOT NULL,
-  `skin_cond` varchar(50) NOT NULL,
-  `skin_preco` decimal(10,2) NOT NULL,
-  `skin_data` datetime DEFAULT CURRENT_TIMESTAMP,
-  `skin_img` varchar(255) DEFAULT NULL,
-  `skin_status` enum('disponível','vendido','reservado') NOT NULL,
-  `skin_float` decimal(5,3) DEFAULT NULL,
-  PRIMARY KEY (`skin_id`),
-  KEY `usu_id` (`usu_id`),
-  CONSTRAINT `skins_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuarios` (`usu_id`) ON DELETE CASCADE
+CREATE TABLE 'skins' (
+  'skin_id' int(11) NOT NULL AUTO_INCREMENT,
+  'usu_id' int(11) NOT NULL,
+  'skin_nome' varchar(100) NOT NULL,
+  'skin_cond' varchar(50) NOT NULL,
+  'skin_preco' decimal(10,2) NOT NULL,
+  'skin_data' datetime DEFAULT CURRENT_TIMESTAMP,
+  'skin_img' varchar(255) DEFAULT NULL,
+  'skin_status' enum('disponível','vendido','reservado') NOT NULL,
+  'skin_float' decimal(5,3) DEFAULT NULL,
+  PRIMARY KEY ('skin_id'),
+  KEY 'usu_id' ('usu_id'),
+  CONSTRAINT 'skins_ibfk_1' FOREIGN KEY ('usu_id') REFERENCES 'usuarios' ('usu_id') ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,7 +42,7 @@ CREATE TABLE `skins` (
 -- Dumping data for table `skins`
 --
 
-LOCK TABLES `skins` WRITE;
+LOCK TABLES 'skins' WRITE;
 /*!40000 ALTER TABLE `skins` DISABLE KEYS */;
 /*!40000 ALTER TABLE `skins` ENABLE KEYS */;
 UNLOCK TABLES;

@@ -21,18 +21,18 @@
 
 SELECT av_id, usu_id, av_nota, av_comentario, av_moderacao FROM avaliacoes;
 
-DROP TABLE IF EXISTS `avaliacoes`;
+DROP TABLE IF EXISTS 'avaliacoes';
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `avaliacoes` (
-  `av_id` int(11) NOT NULL AUTO_INCREMENT,
-  `usu_id` int(11) NOT NULL,
-  `av_nota` int(11) DEFAULT NULL,
-  `av_comentario` text,
-  `av_moderacao` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`av_id`),
-  KEY `usu_id` (`usu_id`),
-  CONSTRAINT `avaliacoes_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuarios` (`usu_id`) ON DELETE CASCADE
+CREATE TABLE 'avaliacoes' (
+  'av_id' int(11) NOT NULL AUTO_INCREMENT,
+  'usu_id' int(11) NOT NULL,
+  'av_nota' int(11) DEFAULT NULL,
+  'av_comentario' text,
+  'av_moderacao' tinyint(1) DEFAULT '0',
+  PRIMARY KEY ('av_id'),
+  KEY 'usu_id' ('usu_id'),
+  CONSTRAINT 'avaliacoes_ibfk_1' FOREIGN KEY ('usu_id') REFERENCES 'usuarios' ('usu_id') ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,7 +40,7 @@ CREATE TABLE `avaliacoes` (
 -- Dumping data for table `avaliacoes`
 --
 
-LOCK TABLES `avaliacoes` WRITE;
+LOCK TABLES 'avaliacoes' WRITE;
 /*!40000 ALTER TABLE `avaliacoes` DISABLE KEYS */;
 /*!40000 ALTER TABLE `avaliacoes` ENABLE KEYS */;
 UNLOCK TABLES;

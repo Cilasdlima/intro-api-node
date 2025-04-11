@@ -19,18 +19,18 @@
 -- Table structure for table `ocorrencias`
 --
 
-DROP TABLE IF EXISTS `ocorrencias`;
+DROP TABLE IF EXISTS 'ocorrencias';
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ocorrencias` (
-  `oco_id` int(11) NOT NULL AUTO_INCREMENT,
-  `trans_id` int(11) NOT NULL,
-  `oco_valor` decimal(10,2) DEFAULT NULL,
-  `oco_situacao` text NOT NULL,
-  `oco_data` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`oco_id`),
-  KEY `trans_id` (`trans_id`),
-  CONSTRAINT `ocorrencias_ibfk_1` FOREIGN KEY (`trans_id`) REFERENCES `transacoes` (`trans_id`) ON DELETE CASCADE
+CREATE TABLE 'ocorrencias' (
+  'oco_id' int(11) NOT NULL AUTO_INCREMENT,
+  'trans_id' int(11) NOT NULL,
+  'oco_valor' decimal(10,2) DEFAULT NULL,
+  'oco_situacao' text NOT NULL,
+  'oco_data' datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY ('oco_id'),
+  KEY 'trans_id' ('trans_id'),
+  CONSTRAINT 'ocorrencias_ibfk_1' FOREIGN KEY ('trans_id') REFERENCES 'transacoes' ('trans_id') ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +38,7 @@ CREATE TABLE `ocorrencias` (
 -- Dumping data for table `ocorrencias`
 --
 
-LOCK TABLES `ocorrencias` WRITE;
+LOCK TABLES 'ocorrencias' WRITE;
 /*!40000 ALTER TABLE `ocorrencias` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ocorrencias` ENABLE KEYS */;
 UNLOCK TABLES;

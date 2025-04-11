@@ -19,21 +19,21 @@
 -- Table structure for table `transacoes`
 --
 
-DROP TABLE IF EXISTS `transacoes`;
+DROP TABLE IF EXISTS 'transacoes';
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `transacoes` (
-  `trans_id` int(11) NOT NULL AUTO_INCREMENT,
-  `usu_id` int(11) NOT NULL,
-  `skin_id` int(11) NOT NULL,
-  `trans_valor` decimal(10,2) NOT NULL,
-  `trans_status` enum('pendente','concluído','cancelado') NOT NULL,
-  `trans_data` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`trans_id`),
-  KEY `usu_id` (`usu_id`),
-  KEY `skin_id` (`skin_id`),
-  CONSTRAINT `transacoes_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuarios` (`usu_id`) ON DELETE CASCADE,
-  CONSTRAINT `transacoes_ibfk_2` FOREIGN KEY (`skin_id`) REFERENCES `skins` (`skin_id`) ON DELETE CASCADE
+CREATE TABLE 'transacoes' (
+  'trans_id' int(11) NOT NULL AUTO_INCREMENT,
+  'usu_id' int(11) NOT NULL,
+  'skin_id' int(11) NOT NULL,
+  'trans_valor' decimal(10,2) NOT NULL,
+  'trans_status' enum('pendente','concluído','cancelado') NOT NULL,
+  'trans_data' datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY ('trans_id'),
+  KEY 'usu_id' ('usu_id'),
+  KEY 'skin_id' ('skin_id'),
+  CONSTRAINT 'transacoes_ibfk_1' FOREIGN KEY ('usu_id') REFERENCES 'usuarios' ('usu_id') ON DELETE CASCADE,
+  CONSTRAINT 'transacoes_ibfk_2' FOREIGN KEY ('skin_id') REFERENCES 'skins' ('skin_id') ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,7 +41,7 @@ CREATE TABLE `transacoes` (
 -- Dumping data for table `transacoes`
 --
 
-LOCK TABLES `transacoes` WRITE;
+LOCK TABLES 'transacoes' WRITE;
 /*!40000 ALTER TABLE `transacoes` DISABLE KEYS */;
 /*!40000 ALTER TABLE `transacoes` ENABLE KEYS */;
 UNLOCK TABLES;
