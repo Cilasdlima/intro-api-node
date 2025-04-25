@@ -25,10 +25,33 @@ module.exports = {
     },
     async cadastrarUsuarios(request, response) {
         try {
+
+            const {nome, email, senha, steamid, saldo, pix, cpf, adm} = request.body;
+        
+            //instrução SQL
+            const sql = `INSERT INTO usuarios (usu_nome, usu_email, usu_senha, usu_steamid, usu_saldo, usu_pix, usu_cpf, usu_adm)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+             `;
+
+             //definição dos dados a serem inseridos em um array
+                const values = [nome, email, senha, steamid, saldo, pix, cpf, adm];
+
+             //execução da instrução SQL passando os parametros
+                const [result] = await db.query(sql, values);
+
+             //indentificação do id do registro inserido
+                const dados = {
+                    id: result.insertId,
+                    nome,
+                    email,
+            
+                };
+
+
             return response.status(200).json({
                 sucesso: true,
                 mensagem: 'Cadastrar usuários',    
-                dados: null
+                dados: dados
             });
         } catch (error) {
             return response.status(500).json({
@@ -40,6 +63,14 @@ module.exports = {
     },
     async editarUsuarios(request, response) {
         try {
+            //parametros recebidos pelo corpo da requisição
+            const {nome, email, senha, steamid, saldo, pix, cpf, adm} = request.body;
+            //parametro recebido pela url params exemplo: /usuarios/1
+            const {usu_id} = request.params;
+            //instrução SQL
+            const sql = `UPDATE usuarios SET usu_nome = ?, usu_email = ?,
+             usu_senha = ?, usu_steamid = ?, usu_saldo = ?, usu_pix = ?, usu_cpf = ?, 
+             usu_adm = ? WHERE usu_id = ?;`;
             return response.status(200).json({
                 sucesso: true,
                 mensagem: 'Editar usuários',    
