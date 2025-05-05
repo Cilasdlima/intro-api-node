@@ -65,16 +65,24 @@ module.exports = {
         try {
             //parametros recebidos pelo corpo da requisição
             const {nome, email, senha, steamid, saldo, pix, cpf, adm} = request.body;
+
             //parametro recebido pela url params exemplo: /usuarios/1
             const {usu_id} = request.params;
+
             //instrução SQL
             const sql = `UPDATE usuarios SET usu_nome = ?, usu_email = ?,
              usu_senha = ?, usu_steamid = ?, usu_saldo = ?, usu_pix = ?, usu_cpf = ?, 
              usu_adm = ? WHERE usu_id = ?;`;
+            //definição dos dados a serem atualizados em um array
+                const values = [nome, email, senha, steamid, saldo, pix, cpf, adm, usu_id];
+                //execução e obtenção de confirmação da atualização realizada
+                const atualizadDados = await db.query(sql, values);
+
             return response.status(200).json({
                 sucesso: true,
-                mensagem: 'Editar usuários',    
-                dados: null
+                mensagem: `usuários ${usu_id} atualizado com sucesso!`,    
+                dados: atualizadDados[0].affectedRows
+                // mensSql: atualiazdos
             });
         } catch (error) {
             return response.status(500).json({
